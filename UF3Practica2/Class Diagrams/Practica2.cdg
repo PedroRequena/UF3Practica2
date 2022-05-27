@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Practica2">
+  <ClassDiagramComponents>
+    <Class name="Biblioteca" package="" visibility="public" xPosition="52.0" yPosition="74.0">
+      <Fields>
+        <Field name="copiesLlibres" type="List&lt;Llibre&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCopiesLlibre" returnType="List&lt;Llibre&gt;" visibility="public"/>
+        <Method name="setCopiesLlibre" returnType="void" visibility="public">
+          <Argument type="List&lt;Llibre&gt;" name="copiesLlibre"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Llibre" package="" visibility="public" xPosition="509.0" yPosition="74.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipus" type="String" visibility="private"/>
+        <Field name="editorial" type="String" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+        <Field name="autor" type="Autor" visibility="private"/>
+        <Field name="identificador" type="String" visibility="private"/>
+        <Field name="estatBiblioteca" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="tipus"/>
+          <Argument type="String" name="editorial"/>
+          <Argument type="int" name="any"/>
+          <Argument type="Autor" name="autor"/>
+          <Argument type="String" name="identificador"/>
+          <Argument type="String" name="estatBiblioteca"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="setNom" returnType="void" visibility="public">
+          <Argument type="String" name="nom"/>
+        </Method>
+        <Method name="getTipus" returnType="String" visibility="public"/>
+        <Method name="setTipus" returnType="void" visibility="public">
+          <Argument type="String" name="tipus"/>
+        </Method>
+        <Method name="getEditorial" returnType="String" visibility="public"/>
+        <Method name="setEditorial" returnType="void" visibility="public">
+          <Argument type="String" name="editorial"/>
+        </Method>
+        <Method name="getAny" returnType="int" visibility="public"/>
+        <Method name="setAny" returnType="void" visibility="public">
+          <Argument type="int" name="any"/>
+        </Method>
+        <Method name="getAutor" returnType="Autor" visibility="public"/>
+        <Method name="setAutor" returnType="void" visibility="public">
+          <Argument type="Autor" name="autor"/>
+        </Method>
+        <Method name="getIdentificador" returnType="String" visibility="public"/>
+        <Method name="setIdentificador" returnType="void" visibility="public">
+          <Argument type="String" name="identificador"/>
+        </Method>
+        <Method name="getEstatBiblioteca" returnType="String" visibility="public"/>
+        <Method name="setEstatBiblioteca" returnType="void" visibility="public">
+          <Argument type="String" name="estatBiblioteca"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Autor" package="" visibility="public" xPosition="325.0" yPosition="667.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="dataNaixement" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="nacionalitat"/>
+          <Argument type="LocalDate" name="dataNaixement"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="setNom" returnType="void" visibility="public">
+          <Argument type="String" name="nom"/>
+        </Method>
+        <Method name="getNacionalitat" returnType="String" visibility="public"/>
+        <Method name="setNacionalitat" returnType="void" visibility="public">
+          <Argument type="String" name="nacionalitat"/>
+        </Method>
+        <Method name="getDataNaixement" returnType="LocalDate" visibility="public"/>
+        <Method name="setDataNaixement" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="dataNaixement"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lector" package="" visibility="public" xPosition="774.0" yPosition="667.0">
+      <Fields>
+        <Field name="llibresPossesio" type="List&lt;Llibre&gt;" visibility="private"/>
+        <Field name="quantitatLlibres" type="int" visibility="private"/>
+        <Field name="quantitatMax" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Llibre&gt;" name="llibresPossesio"/>
+          <Argument type="int" name="quantitatLlibres"/>
+          <Argument type="int" name="quantitatMax"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLlibresPossesio" returnType="List&lt;Llibre&gt;" visibility="public"/>
+        <Method name="setLlibresPossesio" returnType="void" visibility="public">
+          <Argument type="List&lt;Llibre&gt;" name="llibresPossesio"/>
+        </Method>
+        <Method name="getQuantitatLlibres" returnType="int" visibility="public"/>
+        <Method name="setQuantitatLlibres" returnType="void" visibility="public">
+          <Argument type="int" name="quantitatLlibres"/>
+        </Method>
+        <Method name="getQuantitatMax" returnType="int" visibility="public"/>
+        <Method name="setQuantitatMax" returnType="void" visibility="public">
+          <Argument type="int" name="quantitatMax"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="" source="Llibre" target="Autor" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="" source="Llibre" target="Lector" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="" source="Biblioteca" target="Llibre" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
